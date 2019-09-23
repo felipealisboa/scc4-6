@@ -1,0 +1,82 @@
+<h1>Import CSV file</h1>
+
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">file input</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+</form>
+
+<section class="content">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-heading"><strong>BULK TOP UP</strong> <small></small></div>
+      <div class="box box-info">
+        <div class =  "instructions">
+          <ol>
+            <li>The Excel file should contain three columns </li>
+            <li>The first column contains the <strong>Reference</strong></li>
+            <li>The second column contains the <strong>First name</strong></li>
+            <li>The third column contains the <strong>Last name </strong> </li>
+            <li>The second column contains the <strong>Date of Birth</strong></li>
+            <li>The third column contains the <strong>Sex</strong>of the person</li>
+
+          </ol>
+          <div class="box-body table-responsive">
+            <p>The column headers should be <strong>Reference</strong> ,<strong>First_name</strong> ,<strong>Last_name</strong>,<strong>Dob</strong>,<strong>Sex</strong></p>
+            <p>  A sample file is available for download</p>
+            <form>
+              <button data-ng-click="download()">Download CSV</button>
+            </form>
+          </div>
+        </div>
+        <div class="box-body table-responsive">
+          <hr>
+          <hr>
+          <!-- form start -->
+          <p>Your uploaded csv file will be shown to you in a preview  for Confirmation</p>
+          <form role="form" class="form-horizontal" name="bulkDirectForm" method="post" enctype="multipart/form-data" novalidate>
+            <div class="box-body">
+              <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+              <div id="warning" class="alert alert-warning" data-ng-show="warning" data-ng-bind="warning"></div>
+
+              <div class="form-group">
+                <div class="col-sm-10">
+                  <input type="file" class="form-control" id="bulkDirectFile" placeholder="CSV file with phone numbers and amount" ng-model="prd.bulk_direct_file" required accept=".csv">
+                </div>
+                <div class="col-sm-2">
+                  <button type="submit" class="btn btn-block btn-info" ng-hide="myVar" data-ng-click="submitForm(bulkDirectForm)">Upload!</button>
+                </div>
+
+
+                <br>
+                <br>
+
+
+                <div class="col-sm-10" ng-show = title id ="Table">
+                  <h5>Confirm file to be uploaded and Click the Proceed Button Below</h5>
+
+
+                  <div id="dvCSV"></div>
+
+                  <br>
+
+                  <button type="button" class="btn btn-success" data-ng-click="add()">Proceed!</button>
+                </div>
+
+
+
+              </div>
+
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
